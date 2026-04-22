@@ -1,9 +1,35 @@
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "a11b132f-15ef-4310-880c-c5b59e25c7e4",
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+
+  <script>
+    window.OneSignal = window.OneSignal || [];
+
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: ""a11b132f-15ef-4310-880c-c5b59e25c7e4",
+        notifyButton: {
+          enable: true,
+        }
+      });
     });
-  });
-</script>
+
+    function subscribe() {
+      OneSignal.push(function() {
+        OneSignal.showNativePrompt();
+      });
+    }
+  </script>
+</head>
+
+<body style="text-align:center; padding:50px;">
+  <h1>通知登録</h1>
+
+  <button onclick="subscribe()">
+    通知を許可する
+  </button>
+</body>
+</html>

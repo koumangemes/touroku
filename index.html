@@ -2,15 +2,22 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+</head>
 
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+<body style="text-align:center; padding:50px;">
+  <h1>通知登録</h1>
+
+  <button onclick="subscribe()">
+    通知を許可する
+  </button>
 
   <script>
     window.OneSignal = window.OneSignal || [];
 
     OneSignal.push(function() {
       OneSignal.init({
-        appId: ""a11b132f-15ef-4310-880c-c5b59e25c7e4",
+        appId: "a11b132f-15ef-4310-880c-c5b59e25c7e4",
         notifyButton: {
           enable: true,
         }
@@ -23,13 +30,5 @@
       });
     }
   </script>
-</head>
-
-<body style="text-align:center; padding:50px;">
-  <h1>通知登録</h1>
-
-  <button onclick="subscribe()">
-    通知を許可する
-  </button>
 </body>
 </html>
